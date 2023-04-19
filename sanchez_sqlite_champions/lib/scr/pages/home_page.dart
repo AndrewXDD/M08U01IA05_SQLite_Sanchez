@@ -98,9 +98,8 @@ class _HomePageState extends State<HomePage> {
             itemCount: snapshot.data.length,
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
-                leading: Text(
-                  "${index + 1}",
-                  style: const TextStyle(fontSize: 20.0),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(snapshot.data[index].icon),
                 ),
                 title: Text("Nombre: ${snapshot.data[index].nom}"),
                 subtitle: Text('${snapshot.data[index].description}'),
